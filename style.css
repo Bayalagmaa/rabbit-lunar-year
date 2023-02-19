@@ -1,0 +1,482 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background: #87CEFA;
+}
+/* Жанчивийн найман хүүхэд */
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-top: 3%;
+}
+#header .logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 44px;
+  text-decoration: none;
+  text-align: center;
+}
+/* LANDING */
+.landing{
+    background: linear-gradient(to bottom, #ADD8E6, #87CEFA);
+    width:100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+    .cloud {
+      position: relative;
+      /* width: 200px; */
+      height: auto;
+    }
+  
+    .clouds{
+      width:50%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+    }
+  
+    .cloudsSecond{
+      width:50%;
+      height: auto;
+      position: absolute;
+      top: 40%;
+    }
+  
+    .cloud path {
+      fill: #fff;
+    }
+  
+    .cloudOne {
+      position: absolute;
+      animation: move-left 3s ease-in-out forwards;
+    }
+  
+    .cloudTwo {
+      position: absolute;
+      animation: move-right 3s ease-in-out forwards;
+    }
+  
+    .circle {
+      width: 100px;
+      height: 100px;
+      background-size: cover;
+      border-radius: 50%;
+      animation: pop-up 3s ease-in-out forwards;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1px solid ;
+    }
+    .circle img{
+      width: 300%;
+      height: auto;
+    }
+  
+    @keyframes move-left {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(90%);
+  
+      }
+    }
+  
+    @keyframes move-right {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-90%);
+  
+      }
+    }
+  
+    @keyframes pop-up {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(3);
+        opacity: 1;
+      }
+    }
+    .buttons{
+      margin-top:30%;
+      width:100%;
+      height: auto;
+      background-color: transparent;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  /* MAIN */
+  .main{
+    width: 100%;
+    height: auto;
+    /* background-color: orange; */
+  }
+  /* Buttons */
+  .buttons{
+    margin-top:30%;
+    width:100%;
+    height: auto;
+    background-color: transparent;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#btns button{
+    text-align: center;
+}
+button {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+button:active {
+    transform: scale(0.99);
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: max-height 0.2s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+  
+  .dropdown-btn {
+    background-color: #094b65;
+    color: white;
+    padding: 22px 50px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: white transparent transparent transparent;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    background-color: #f1f1f1;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .active .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+  }
+  .active .arrow {
+    transform: rotate(180deg);
+  }
+  
+  .dropdown-container.active {
+    max-height: 2000px;
+    transition: max-height 0.3s ease-in; padding: 5%;
+  }
+  
+  .dropdown-text {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .dropdown-container.active .dropdown-text {
+    opacity: 1;
+  }
+  /* PDF */
+  .pdf-button {
+    display: inline-block;
+    position: relative;
+    padding: 12px 24px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color:#094b65;
+    border-radius: 4px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-top: 5%;
+  }
+  
+  .pdf-button span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .pdf-button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 200%;
+    height: 200%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.5s ease-out;
+  }
+  
+  .pdf-button:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .pdf-button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+  
+  .pdf-button:active:before {
+    transform: translate(-50%, -50%) scale(0);
+  }
+/* Уриалга */
+.sec {
+    position: absolute;
+    padding: 100px 20%;
+    /* background: #094b65; */
+    z-index: 1;
+}
+.sec h2 {
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+     width: 100%;
+     margin-bottom: 3%;
+}
+.sec p{
+    font-size: 32px;
+    color:aliceblue;
+  
+}
+/* SECTION */
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section img {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height:100%;
+    object-fit: color;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  section center{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+  }
+ /* WORD */ 
+.word{
+    position: absolute;
+    text-align: center;
+    transform: translateY(-50%);
+    width: 100%;
+    height: auto;
+    /* background-color: lightcoral; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .word p{
+    font-size: 44px;
+    color:aliceblue;
+  }
+  .word h2{
+    margin-top: 1%;
+    font-size: 40px;
+    color:rgb(27, 46, 97);
+  }
+  #hadag{
+    width:65%;
+    height: auto;
+    display: block;
+    margin-top: 10%;
+    margin-left: calc(100% / 5);
+  }
+  /* DropDown Text Style */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 2spx;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  li p {
+    font-weight: bold; margin-left: 5%;
+  }
+  
+
+  ul + p {
+    margin-top: 20px;
+  }
+@media only all and (min-width: 769px) and (max-width: 1024px) {
+    /* CSS styles for large screen */
+    /* Жанчивийн найман хүүхэд */
+    #header {
+        padding: 20px;
+    }
+    #header .logo {
+        font-size: 34px;
+    }
+    /* LANDING */
+    .circle img{
+      width: 200%;
+      height: auto;
+    }
+    /* Уриалга */
+    .sec h2 {
+        font-size: 32px;
+        text-align: center;
+        }
+      
+    .sec p{
+        font-size: 28px;
+    }
+    /* WORD */
+    .word p{
+        font-size: 40px;
+    }
+    .word h2{
+        font-size: 36px;
+    }
+    #hadag{
+        width:65%;
+        margin-left: calc(100% / 7);
+      }
+      
+}
+@media only all and (min-width: 481px) and (max-width: 768px) {
+    /* CSS styles for medium screen */
+    /* Жанчивийн найман хүүхэд */
+    #header .logo {
+        font-size: 24px;
+    }
+    /* LANDING */
+    .circle img{
+      width: 150%;
+      height: auto;
+    }
+    /* Уриалга */
+    .sec h2 {
+        font-size: 28px;
+        text-align: center;
+        }
+      
+    .sec p{
+        font-size: 24px;
+    }
+/* WORD */
+    .word p{
+        font-size: 36px;
+    }
+    .word h2{
+        font-size: 32px;
+    }
+    #hadag{
+        width:75%;
+        margin-left: calc(100% / 9);
+      }
+      
+}
+@media only all and (max-width: 480px) {
+    /* CSS styles for small screen */
+    /* Жанчивийн найман хүүхэд */
+    #header .logo {
+        font-size: 20px;
+    }
+    /* LANDING */
+    .circle img{
+      width: 120%;
+      height: auto;
+    }
+    /* Уриалга */
+    .sec h2 {
+        font-size: 24px;
+        text-align: center;
+        }
+      
+    .sec p{
+        font-size: 20px;
+    }
+    /* WORD */
+    .word p{
+        font-size: 32px;
+    }
+    .word h2{
+        font-size: 28px;
+    }
+    #hadag{
+        width:85%;
+        margin-left: calc(100% / 11);
+      }
+      
+}
+
